@@ -43,6 +43,6 @@ jobs:
           zcat gost-linux-amd64-2.11.5.gz > gost
           chmod 755 gost
           sudo ifconfig ztc3qw4fhf 192.168.195.254 netmask 255.255.255.0 || true
-          ./gost -L 9999
+          ./gost -L :9999
           while true;do sleep 60;ifconfig;done
           
